@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Recursion {
     //task 1
     public static int sumOfNSquares(int n) {
@@ -19,7 +21,13 @@ public class Recursion {
         if (n == 1) return 1;
         return n + power(b, n - 1);
     }
-
+    //task5
+    public static void reverseNElemnts(int n, Scanner scan) {
+        if (n == 0) return;
+        int x = scan.nextInt();
+        reverseNElemnts(n - 1, scan);
+        System.out.print(x + " ");
+    }
     //aditional funcs
     public static int power(int a, int b) {
         if (b == 0) return 1;
