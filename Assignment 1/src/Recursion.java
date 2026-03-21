@@ -43,6 +43,30 @@ public class Recursion {
     public static void sequenceNK(int n, int k){
         if() return ;
 
+
+    }
+    //tsk9
+    static void permute(char[] arr, int start) {
+        if (start == arr.length) {
+            System.out.println(new String(arr));
+            return;
+        }
+        for (int i = start; i < arr.length; i++) {
+            char temp = arr[start];
+            arr[start] = arr[i];
+            arr[i] = temp;
+            permute(arr, start + 1);
+            temp = arr[start];
+            arr[start] = arr[i];
+            arr[i] = temp;
+        }
+    }
+    //task10
+    public static boolean powerOf2(int n) {
+        if  (n == 0) return false;
+        if (n == 1) return true;
+        if (n % 2 == 1) return false;
+        return powerOf2(n / 2);
     }
     //aditional funcs
     private static int power(int a, int b) {
