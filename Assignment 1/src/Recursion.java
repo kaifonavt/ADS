@@ -18,7 +18,7 @@ public class Recursion {
     }
     //task4
     public static int sumOfNPowersOfB(int b, int n) {
-        if (n == 1) return 1;
+        if (n == 1) return 0;
         return n + power(b, n - 1);
     }
     //task5
@@ -33,17 +33,37 @@ public class Recursion {
         if (n == 0) return;
         char[] str = scan.nextLine().toCharArray();
         reverseNLines(n - 1, scan);
-        System.out.print(str);
+        System.out.println(str);
     }
     //task7
-    public static void spiralN(int n){
-
+    public static void spiralN(int[][] matrix, int top, int bottom, int left, int right, int n) {
+        if ((top > bottom) || (left > right)) return;
+        for (int c = left; c <= right; c++)
+            matrix[top][c] = n++;
+        for (int r = top + 1; r <= bottom; r++)
+            matrix[r][right] = n++;
+        if (top < bottom)
+            for (int c = right - 1; c >= left; c--)
+                matrix[bottom][c] = n++;
+        if (left < right)
+            for (int r = bottom - 1; r >= top + 1; r--)
+                matrix[r][left] = n++;
+        spiralN(matrix, top + 1, bottom - 1, left + 1, right - 1, n);
     }
     //task8
-    public static void sequenceNK(int n, int k){
-        if() return ;
-
-
+    static void sequenceNK(int[] arr, int pos, int n, int k) {
+        if (pos == n) {
+            for (int i = 0; i < n; i++) {
+                System.out.print(arr[i]);
+                if (i < n - 1) System.out.print(" ");
+            }
+            System.out.println();
+            return;
+        }
+        for (int x = 1; x <= k; x++) {
+            arr[pos] = x;
+            sequenceNK(arr, pos + 1, n, k);
+        }
     }
     //tsk9
     static void permute(char[] arr, int start) {
