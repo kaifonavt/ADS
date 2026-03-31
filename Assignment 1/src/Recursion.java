@@ -18,8 +18,8 @@ public class Recursion {
     }
     //task4
     public static int sumOfNPowersOfB(int b, int n) {
-        if (n == 1) return 0;
-        return n + power(b, n - 1);
+        if (n == 0) return 1;
+        return power(b, n) + sumOfNPowersOfB(b, n-1 );
     }
     //task5
     public static void reverseNElemnts(int n, Scanner scan) {
@@ -89,7 +89,7 @@ public class Recursion {
         return powerOf2(n / 2);
     }
     //aditional funcs
-    private static int power(int a, int b) {
+    public static int power(int a, int b) {
         if (b == 0) return 1;
         if (b == 1) return a;
         return a*power(a, b-1);
