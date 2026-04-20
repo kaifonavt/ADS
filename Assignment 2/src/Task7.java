@@ -6,8 +6,8 @@ public class Task7 {
         for (int n : nums) {
             countMap.put(n, countMap.getOrDefault(n, 0) + 1);
         }
-        PriorityQueue<Integer> heap = new PriorityQueue<>( //googled it tbh
-                (a, b) -> countMap.get(a) - countMap.get(b)
+        PriorityQueue<Integer> heap = new PriorityQueue<>(
+                (a, b) -> countMap.get(a) - countMap.get(b) //googled it tbh
         );
         for (int num : countMap.keySet()) {
             heap.add(num);
