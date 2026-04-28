@@ -1,7 +1,10 @@
 void main() {
     int[] arr = {33, 69, 91, 36, 29, 12, 62, 54, 10, 57};
     //tast A1 - HeapSort - O(n*log(n))
-
+    TaskA1 myHeap = new TaskA1(arr);
+    myHeap.printHeap();
+    myHeap.extractMax();
+    myHeap.printHeap();
     //task A2 - BubbleSortMod - O(n2)
     TaskA2.bubbleSort(arr);
     //Task 3A - QuickSortPartition - O(n*log(n))
